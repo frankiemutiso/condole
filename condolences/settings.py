@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from condolences.condole.views import condolences
 from pathlib import Path
 
 import environ
@@ -33,8 +34,6 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['condole.azurewebsites.net']
-
-
 # Application definition
 
 INSTALLED_APPS = [
