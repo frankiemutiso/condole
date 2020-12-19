@@ -30,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['condole.azurewebsites.net']
+ALLOWED_HOSTS = ['condole.azurewebsites.net', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
