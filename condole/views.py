@@ -12,8 +12,7 @@ def post_message(request):
         form = MessageForm(request.POST)
         if form.is_valid():
             message = Message()
-            message.first_name = form.cleaned_data['first_name']
-            message.last_name = form.cleaned_data['last_name']
+            message.name = form.cleaned_data['name']
             message.relationship_with_deceased = form.cleaned_data['relationship_with_deceased']
             message.email = form.cleaned_data['email']
             message.message = form.cleaned_data['message']
