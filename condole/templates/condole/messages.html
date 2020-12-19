@@ -1,0 +1,18 @@
+{% extends 'condole/base.html' %} {% block content %}
+
+<div class="row message__container mb-3 mx-3">
+  {% for condolence in condolences %}
+  <div class="message">
+    <div class="message__description">
+      <i class="fas fa-quote-left"></i>
+      <p>{{ condolence.message }}</p>
+      <i class="fas fa-quote-right"></i>
+    </div>
+    <p class="message__name">
+      {{ condolence.name }}, {{condolence.relationship_with_deceased}}
+    </p>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}
