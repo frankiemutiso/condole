@@ -1,0 +1,22 @@
+{% extends 'condole/index.html' %}
+{% load static %} 
+{% block content %}
+
+<div class="row create">
+  <form class="col-md-8" action="" method="POST">
+    {% csrf_token %} 
+    
+    {{form|crispy}}
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end my-3">
+      <input
+        type="submit"
+        value="Submit Death"
+        class="btn btn-outline-primary"
+      />
+    </div>
+  </form>
+</div>
+    
+{% endblock content %}
+    

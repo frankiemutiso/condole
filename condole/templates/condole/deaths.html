@@ -1,0 +1,15 @@
+{% extends 'condole/index.html' %}
+{% load static %} 
+{% block content %}
+
+<div class="row message__container mb-3 mx-3">
+  {% for death in deaths %}
+  <div class="message">
+    <p>Name: {{ death.name }}</p>
+    <p>Age: {{ death.age }}</p>
+    <p>Description: {{ death.description }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}

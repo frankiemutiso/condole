@@ -11,3 +11,9 @@ class MessageForm(forms.Form):
     class Meta:
         model = Message
         fields = ['name', 'email', 'message']
+
+
+class DeathForm(forms.Form):
+    name = forms.CharField(max_length=100, required=True)
+    age = forms.IntegerField(required=True)
+    description = forms.CharField(widget=forms.Textarea, required=True)
