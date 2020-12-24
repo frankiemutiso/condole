@@ -103,6 +103,10 @@ DATABASES = {
 
         'PORT': env('DATABASE_PORT'),
 
+        'OPTIONS': {
+            'sslmode': 'require',
+        }
+
     }
 
 }
