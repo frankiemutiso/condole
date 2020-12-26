@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Message
+from .models import Message, Death
 from .forms import MessageForm, DeathForm
 from django.shortcuts import render
 
