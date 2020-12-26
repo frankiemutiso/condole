@@ -27,7 +27,7 @@ def deaths(request):
     deaths = Death.objects.all()
     context = {'deaths':  deaths}
 
-    return render(request, 'condole/deaths.html')
+    return render(request, 'condole/deaths.html', context)
 
 
 def post_message(request):
