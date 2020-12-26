@@ -8,6 +8,7 @@
     <p>Name: {{ death.name }}</p>
     <p>Age: {{ death.age }}</p>
     <p>Description: {{ death.description }}</p>
+    <a href="{% url 'post-message' %}">Leave a message</a>
   </div>
   {% endfor %}
 </div>
