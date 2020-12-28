@@ -54,7 +54,7 @@ def leave_message(request, pk):
 
             message.save()
 
-            return redirect('condolences')
+            return redirect('detail')
 
     return render(request, 'condole/leave-message.html', {'form': form})
 
