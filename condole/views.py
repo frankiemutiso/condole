@@ -33,7 +33,7 @@ def deaths(request):
 
 def detail(request, pk):
     death = Death.objects.get(pk=pk)
-    messages = Message.objects.filter(owner=pk)
+    messages = Message.objects.filter(owner=death.id)
 
     context = {'death': death, 'messages': messages}
 
@@ -45,9 +45,8 @@ def leave_message(request, pk):
     if request.method == 'POST':
         form = MessageForm(request.POST)
         if form.is_valid():
-            death = Death.objects.get(pk=pk)
             message = Message()
-            message.owner = death.id
+            message.owner = Death.objects.get(pk=pk)
             message.name = form.cleaned_data['name']
             message.relationship_with_deceased = form.cleaned_data['relationship_with_deceased']
             message.email = form.cleaned_data['email']
