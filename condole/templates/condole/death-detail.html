@@ -7,7 +7,7 @@
     <p>{{ death.name }}</p>
     <p>{{ death.age }}</p>
     <p>{{ death.description }}</p>
-    <a href="{% url 'leave-message' %}">Leave a message</a>
+    <a href="{% url 'leave-message' death.id %}">Leave a message</a>
 
     <div class="row message__container mb-3 mx-3">
         {% for message in messages %}
