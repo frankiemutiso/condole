@@ -1,0 +1,31 @@
+{% extends 'condole/index.html' %} 
+{% load static %}
+{% load crispy_forms_tags %} 
+{% block content %}
+
+<div class="detail">
+    <p>{{ death.name }}</p>
+    <p>{{ death.age }}</p>
+    <p>{{ death.description }}</p>
+    <a href="{% url 'post-message' %}">Leave a message</a>
+
+    <div class="row message__container mb-3 mx-3">
+        {% for message in messages %}
+        <div class="message">
+            <div class="message__description">
+            <i class="fas fa-quote-left"></i>
+            <p>{{ message.message }}</p>
+            <i class="fas fa-quote-right"></i>
+            </div>
+            <p class="message__name">
+            {{ message.name }}, {{message.relationship_with_deceased}}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+{% endblock content %}

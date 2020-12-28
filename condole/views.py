@@ -25,17 +25,29 @@ def create_death(request):
 
 def deaths(request):
     deaths = Death.objects.all()
+
     context = {'deaths':  deaths}
 
     return render(request, 'condole/deaths.html', context)
 
 
-def post_message(request):
+def detail(request, pk):
+    death = Death.objects.get(pk=pk)
+    messages = Message.objects.filter(owner=pk)
+
+    context = {'death': death, 'messages': messages}
+
+    return render(request, 'condole/death-detail.html', context)
+
+
+def leave_message(request, pk):
     form = MessageForm()
     if request.method == 'POST':
         form = MessageForm(request.POST)
         if form.is_valid():
+            death = Death.objects.get(pk=pk)
             message = Message()
+            message.owner = death.id
             message.name = form.cleaned_data['name']
             message.relationship_with_deceased = form.cleaned_data['relationship_with_deceased']
             message.email = form.cleaned_data['email']
@@ -45,7 +57,7 @@ def post_message(request):
 
             return redirect('condolences')
 
-    return render(request, 'condole/create.html', {'form': form})
+    return render(request, 'condole/leave-message.html', {'form': form})
 
 
 def condolences(request):

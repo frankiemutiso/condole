@@ -5,10 +5,9 @@
 <div class="row message__container mb-3 mx-3">
   {% for death in deaths %}
   <div class="message">
-    <p>Name: {{ death.name }}</p>
+    <a href="{% url 'detail' death.id %}">{{ death.name }}</a>
     <p>Age: {{ death.age }}</p>
-    <p>Description: {{ death.description }}</p>
-    <a href="{% url 'post-message' %}">Leave a message</a>
+    
   </div>
   {% endfor %}
 </div>
