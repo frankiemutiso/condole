@@ -28,11 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# 'condole.azurewebsites.net', '127.0.0.1'
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['condole.azurewebsites.net', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
@@ -81,37 +81,37 @@ WSGI_APPLICATION = 'condolences.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # POSTGRESQL
-# DATABASES = {
+DATABASES = {
 
-#     'default': {
+    'default': {
 
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-#         'NAME': env('DATABASE_NAME'),
+        'NAME': env('DATABASE_NAME'),
 
-#         'USER': env('DATABASE_USER'),
+        'USER': env('DATABASE_USER'),
 
-#         'PASSWORD': env('DATABASE_PASSWORD'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
 
-#         'HOST': env('DATABASE_HOST'),
+        'HOST': env('DATABASE_HOST'),
 
-#         'PORT': env('DATABASE_PORT'),
+        'PORT': env('DATABASE_PORT'),
 
-#         'OPTIONS': {
-#             'sslmode': 'require',
-#         }
+        'OPTIONS': {
+            'sslmode': 'require',
+        }
 
-#     }
+    }
 
-# }
+}
 
 
 # Password validation
