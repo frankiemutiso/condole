@@ -77,7 +77,7 @@ body{
 }
 
 .message{
-    border-right: 1px solid #00303f;
+    border-left: 2px solid #00303f;
 }
 
 .message__name{
