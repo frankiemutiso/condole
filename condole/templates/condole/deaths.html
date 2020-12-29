@@ -4,12 +4,11 @@
 
 <div class="deaths">
   <h4>Recent Deaths</h4>
-  <div class="row message__container mb-3 mx-3">
+  <div class="row deaths__container mb-3 mx-3">
   {% for death in deaths %}
-  <div class="message">
-    <a href="{% url 'detail' death.id %}">{{ death.name }}</a>
-    <p>Age: {{ death.age }}</p>
-    
+  <div class="death">
+    <a href="{% url 'detail' death.id %}">{{ death.name }}</a> . <span>{{ death.age }}years</span>
+    <p>{{ death.description }}</p>
   </div>
   {% endfor %}
 </div>

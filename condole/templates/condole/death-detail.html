@@ -3,23 +3,22 @@
 {% load crispy_forms_tags %} 
 {% block content %}
 
-<div class="detail">
-    <p>{{ death.name }}</p>
-    <p>{{ death.age }}</p>
-    <p>{{ death.description }}</p>
-    <a href="{% url 'leave-message' death.id %}">Leave a message</a>
+<div class="details">
+    <div class="detail">
+        <p class="detail__title">{{ death.name }} died at the age of {{ death.age }} years</p>
+        <p class="detail__description">{{ death.description }}</p>
+        <a href="{% url 'leave-message' death.id %}">Leave Tribute</a>
+    </div>
+    
 
     <div class="row message__container mb-3 mx-3">
+        <h4>Recent Condolences</h4>  
         {% for message in messages %}
         <div class="message">
             <div class="message__description">
-            <i class="fas fa-quote-left"></i>
-            <p>{{ message.message }}</p>
-            <i class="fas fa-quote-right"></i>
+                <p>{{ message.created_at|date:"D d M Y" }}</p>
+                <p><span class="message__name">{{ message.name }}, {{message.relationship_with_deceased}}</span>: {{ message.message }}</p>
             </div>
-            <p class="message__name">
-            {{ message.name }}, {{message.relationship_with_deceased}}
-            </p>
         </div>
         {% endfor %}
     </div>
