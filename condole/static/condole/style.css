@@ -75,3 +75,10 @@ body{
 .message__container > h5{
     margin-top: 40px;
 }
+
+.message__name{
+    font-size: 19px;
+    font-weight: 500;
+}
+
+/*  */

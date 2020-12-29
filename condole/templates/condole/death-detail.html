@@ -16,8 +16,8 @@
         {% for message in messages %}
         <div class="message">
             <div class="message__description">
-                <p>{{ message.created_at|date:"D d M Y" }}</p>
-                <p><span class="message__name">{{ message.name }}, {{message.relationship_with_deceased}}</span>: {{ message.message }}</p>
+                <p ><span class="message__name">{{ message.name }}</span> ▪ {{ message.created_at|date:"d.m.y" }}</p>
+                <p>{{ message.message }}</p>
             </div>
         </div>
         {% endfor %}
