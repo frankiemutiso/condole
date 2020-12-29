@@ -7,7 +7,7 @@
   <div class="row deaths__container mb-3 mx-3">
   {% for death in deaths %}
   <div class="death">
-    <a href="{% url 'detail' death.id %}">{{ death.name }}</a> . <span>{{ death.age }}years</span>
+    <a href="{% url 'detail' death.id %}">{{ death.name }}</a> ▪ <span>{{ death.age }}years</span>
     <p>{{ death.description }}</p>
   </div>
   {% endfor %}
