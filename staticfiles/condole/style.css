@@ -7,9 +7,14 @@
 
 body{
     font-family: 'Ubuntu', sans-serif;
-    background-color: #222831;
-    color: white;
+    background-color: white;
+    color: #222831;
     
+}
+
+.container{
+    width: 70% !important;
+    margin: auto;
 }
 
 .create{
@@ -25,49 +30,48 @@ body{
     border-radius: 5px;
     margin-bottom: 10px;
 }
-
-.message__container{
-    display: flex;
-    justify-content: center;
-}
-
-.message{
-    background: #476CE4;
-    color: #fff;
-    margin: 5px;
-    box-shadow: 0px 2px 5px -1px black;
-    border-radius: 3px;
-    padding: 30px;
-    width: 400px;
-}
-
-.message__description{
-    display: flex;
-    align-items: baseline;
-}
-
-.message__description > i{
-    font-size: 30px;
-    color: #3E56A2;
-    margin: 0 20px;
-    
-}
-
-.message > p{
-    line-height: 1.2;
-}
-
-.message__name{
-    display: flex;
-    justify-content: flex-end;
-    font-weight: 500;
-    color: #3E56A2;
-    margin: 0 20px;
-}
+/* CONDOLENCE MESSAGES */
 
 /* DEATHS TEMPLATE */
 .deaths{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.death{
+    border-bottom: 1px solid lightgray;
+}
+
+.death > a{
+    text-decoration: none;
+    color: #a0a0a0;
+    font-weight: 500;
+    font-size: 19px;
+}
+
+.death > a:hover{
+    color: #727272;
+}
+
+/* DETAIL TEMPLATES */
+.details{
+    
+    
+}
+
+.detail__title{
+    font-size: 27px;
+    font-weight: 600;
+}
+
+
+.detail > a{
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.message__container > h4{
+    margin-top: 40px;
 }
