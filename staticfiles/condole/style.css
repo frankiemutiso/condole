@@ -13,7 +13,6 @@ body{
 }
 
 .container{
-    width: 70% !important;
     margin: auto;
 }
 
@@ -56,10 +55,6 @@ body{
 }
 
 /* DETAIL TEMPLATES */
-.details{
-    
-    
-}
 
 .detail__title{
     font-size: 27px;
@@ -78,6 +73,7 @@ body{
 
 .message{
     border-left: 2px solid #00303f;
+    margin-bottom: 10px;
 }
 
 .message__name{
