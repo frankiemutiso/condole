@@ -76,6 +76,10 @@ body{
     margin-top: 40px;
 }
 
+.message{
+    border-right: 1px solid #00303f;
+}
+
 .message__name{
     font-size: 19px;
     font-weight: 500;

@@ -37,7 +37,7 @@ def detail(request, pk):
 
     context = {'death': death, 'messages': messages}
 
-    return render(request, 'condole/death-detail.html', context)
+    return render(request, 'condole/detail.html', context)
 
 
 def leave_message(request, pk):
