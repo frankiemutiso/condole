@@ -12,15 +12,19 @@
     
 
     <div class="row message__container mb-3 mx-3">
-        <h5>Recent Condolences</h5>  
-        {% for message in messages %}
-        <div class="message">
-            <div class="message__description">
-                <p ><span class="message__name">{{ message.name }}</span> ▪ {{ message.created_at|date:"d.m.y" }}</p>
-                <p>{{ message.message }}</p>
+        {% if messages %}
+            <h5>Recent Condolences</h5>  
+            {% for message in messages %}
+            <div class="message">
+                <div class="message__description">
+                    <p ><span class="message__name">{{ message.name }}</span> ▪ {{ message.created_at|date:"d.m.y" }}</p>
+                    <p>{{ message.message }}</p>
+                </div>
             </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
+        {% else %}
+            <h5>No condolence messages. Be first to send one.</h5>
+        {% endif %}
     </div>
 
 </div>
