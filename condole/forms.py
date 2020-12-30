@@ -15,5 +15,6 @@ class MessageForm(forms.Form):
 
 class DeathForm(forms.Form):
     name = forms.CharField(max_length=100, required=True)
-    age = forms.IntegerField(required=True)
+    birth_year = forms.IntegerField(required=True)
+    death_year = forms.IntegerField(required=True)
     description = forms.CharField(widget=forms.Textarea, required=True)
