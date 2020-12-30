@@ -6,7 +6,8 @@ from django.db import models
 
 class Death(models.Model):
     name = models.CharField(max_length=50)
-    age = models.IntegerField()
+    birth_year = models.IntegerField(null=True)
+    death_year = models.IntegerField(null=True)
     description = models.TextField()
 
     def __str__(self):
