@@ -5,9 +5,9 @@
 
 <div class="details">
     <div class="detail">
-        <p class="detail__title">{{ death.name }} died at the age of {{ death.age }} years</p>
+        <p class="detail__title">{{ death.name }} ▪ Born:{{death.birth_year}} - Died:{{death.death_year}}</p>
         <p class="detail__description">{{ death.description }}</p>
-        <a href="{% url 'leave-message' death.slug %}">Leave a tribute</a>
+        <a class="leave-message-link" href="{% url 'leave-message' death.slug %}">Leave a tribute</a>
     </div>
     
 
@@ -23,7 +23,7 @@
             </div>
             {% endfor %}
         {% else %}
-            <h5>No condolence messages. Be first to send one.</h5>
+            <h5>No condolence messages. Be first to <a class="leave-message-link" href="{% url 'leave-message' death.slug %}">send one</a>.</h5>
         {% endif %}
     </div>
 

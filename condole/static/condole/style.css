@@ -61,8 +61,7 @@ body{
     font-weight: 600;
 }
 
-
-.detail > a{
+.leave-message-link{
     text-decoration: none;
     font-weight: 500;
 }
