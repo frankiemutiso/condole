@@ -18,6 +18,10 @@ body{
 }
 
 /* INDEX */
+nav{
+    position: sticky;
+}
+/*  */
 
 .create{
     display: flex;
