@@ -55,13 +55,7 @@ def leave_message(request, pk):
 
             message.save()
 
-            return redirect('detail', death.id)
+            return redirect('detail', death.slug)
 
     return render(request, 'condole/leave-message.html', {'form': form})
 
-
-def condolences(request):
-    condolences = Message.objects.all()
-    context = {'condolences': condolences}
-
-    return render(request, 'condole/messages.html', context)
