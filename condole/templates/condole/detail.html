@@ -7,7 +7,7 @@
     <div class="detail">
         <p class="detail__title">{{ death.name }} died at the age of {{ death.age }} years</p>
         <p class="detail__description">{{ death.description }}</p>
-        <a href="{% url 'leave-message' death.id %}">Leave a tribute</a>
+        <a href="{% url 'leave-message' death.slug %}">Leave a tribute</a>
     </div>
     
 
