@@ -45,6 +45,7 @@ def leave_message(request, pk):
     if request.method == 'POST':
         form = MessageForm(request.POST)
         if form.is_valid():
+            death = Death.objects.get(pk=pk)
             message = Message()
             message.owner = Death.objects.get(pk=pk)
             message.name = form.cleaned_data['name']
@@ -54,7 +55,7 @@ def leave_message(request, pk):
 
             message.save()
 
-            return redirect('condolences')
+            return redirect('detail', death.id)
 
     return render(request, 'condole/leave-message.html', {'form': form})
 
