@@ -11,13 +11,8 @@ def create_death(request):
     if request.method == 'POST':
         form = DeathForm(request.POST)
         if form.is_valid():
-            death = Death()
-            death.name = form.cleaned_data['name']
-            death.birth_year = form.cleaned_data['birth_year']
-            death.death_year = form.cleaned_data['death_year']
-            death.description = form.cleaned_data['description']
-
-            death.save()
+            Death.objects.create(name=form.cleaned_data['name'], birth_year=form.cleaned_data['birth_year'],
+                                 death_year=form.cleaned_data['death_year'], description=form.cleaned_data['description'])
 
             return redirect('deaths')
 
