@@ -19,21 +19,21 @@ def create_death(request):
     return render(request, 'condole/create_death.html', {'form': form})
 
 
-# def deaths(request):
-#     deaths = Death.objects.all()
+def deaths(request):
+    deaths = Death.objects.all()
 
-#     context = {'deaths':  deaths}
+    context = {'deaths':  deaths}
 
-#     return render(request, 'condole/deaths.html', context)
+    return render(request, 'condole/deaths.html', context)
 
 
-def detail(request, slug):
-    death = Death.objects.get(slug=slug)
-    messages = Message.objects.filter(owner=death.id)
+# def detail(request, slug):
+#     death = Death.objects.get(slug=slug)
+#     messages = Message.objects.filter(owner=death.id)
 
-    context = {'death': death, 'messages': messages}
+#     context = {'death': death, 'messages': messages}
 
-    return render(request, 'condole/detail.html', context)
+#     return render(request, 'condole/detail.html', context)
 
 
 def leave_message(request, slug):
