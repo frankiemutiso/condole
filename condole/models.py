@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 # Create your models here.
 
+
 class Death(models.Model):
     name = models.CharField(max_length=50)
     birth_year = models.IntegerField(null=True)
@@ -11,6 +12,10 @@ class Death(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.headline)
+        super(Death, self).save(*args, **kwargs)
 
 
 class Message(models.Model):
