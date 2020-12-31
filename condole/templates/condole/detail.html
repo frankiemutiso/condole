@@ -5,7 +5,11 @@
 
 <div class="details">
     <div class="detail">
-        <p class="detail__title">{{ death.name }} ▪ Born:{{death.birth_year}} - Died:{{death.death_year}}</p>
+        <div class="detail__metadata">
+            <p class="detail__name">{{ death.name }}</p>
+            <p class="detail__period"><span class="detail__period-highlight">Born:</span> {{death.birth_year}} - <span class="detail__period-highlight">Died:</span> {{death.death_year}}</p>
+        </div>
+        
         <p class="detail__description">{{ death.description }}</p>
         <a class="leave-message-link" href="{% url 'leave-message' death.slug %}">Leave a tribute</a>
     </div>

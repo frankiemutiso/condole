@@ -7,8 +7,14 @@
   <div class="row deaths__container mb-3 mx-3">
   {% for death in deaths %}
   <div class="death">
-    <a href="{% url 'detail' death.slug %}">{{ death.name }}</a> ▪ <span>{{ death.birth_year }} - {{death.death_year}}</span>
+    <div class="death__metadata">
+      <p class="death__name">{{ death.name }}</p> 
+      <p>{{ death.birth_year }} - {{death.death_year}}</p>
+    </div>
+    
     <p>{{ death.description }}</p>
+
+    <a href="{% url 'detail' death.slug %}">See more details</a>
   </div>
   {% endfor %}
 </div>
