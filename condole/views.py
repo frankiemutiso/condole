@@ -13,7 +13,8 @@ def create_death(request):
         if form.is_valid():
             death = Death()
             death.name = form.cleaned_data['name']
-            death.age = form.cleaned_data['age']
+            death.birth_year = form.cleaned_data['birth_year']
+            death.death_year = form.cleaned_data['death_year']
             death.description = form.cleaned_data['description']
 
             death.save()
